@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/LotoNumbReactTS/static/css/main.ef28aea8.css",
+    "main.js": "/LotoNumbReactTS/static/js/main.1e085a32.js",
+    "static/js/787.791d3a95.chunk.js": "/LotoNumbReactTS/static/js/787.791d3a95.chunk.js",
+    "index.html": "/LotoNumbReactTS/index.html",
+    "main.ef28aea8.css.map": "/LotoNumbReactTS/static/css/main.ef28aea8.css.map",
+    "main.1e085a32.js.map": "/LotoNumbReactTS/static/js/main.1e085a32.js.map",
+    "787.791d3a95.chunk.js.map": "/LotoNumbReactTS/static/js/787.791d3a95.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef28aea8.css",
+    "static/js/main.1e085a32.js"
+  ]
+}
