@@ -12,12 +12,16 @@
 }
 /* TITLE */
 .app-title {
-  font-size: calc(2vmin + 23px);
+  font-size: calc(1.6vmin + 20px);
   border-radius: 10px;
   padding: 3% 1%;
   transition: all 0.3s ease-out;
   opacity: 0;
   animation: showElement 0.5s ease-out 0.1s forwards;
+}
+
+.app-title span {
+  display: inline-block;
 }
 /* NAV */
 .app-nav {
@@ -448,6 +452,9 @@ div.userStars {
   /* All buttons */
   button {
     cursor: pointer;
+  }
+  .app-title {
+    font-size: calc(2vmin + 25px);
   }
   /* Nav & Jackpot buttons hover */
   .app-nav button:hover,

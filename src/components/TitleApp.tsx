@@ -11,7 +11,7 @@ function TitleApp({ color }: Color) {
       className="app-title"
       style={{ color: color?.front, background: color?.back }}
     >
-      I want winner numbers !
+      I want the winning <span>numbers !</span>
     </h1>
   );
 }
