@@ -1,5 +1,482 @@
 .App {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-grow: 1;
+  background-color: #f1f1f1;
   text-align: center;
-  background-color: aqua;
-  min-height: 100vh;
+  padding: 2.5% 2%;
+}
+/* TITLE */
+.app-title {
+  font-size: calc(2vmin + 23px);
+  border-radius: 10px;
+  padding: 3% 1%;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  animation: showElement 0.5s ease-out 0.1s forwards;
+}
+/* NAV */
+.app-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2% 0;
+}
+/* Nav buttons */
+.app-nav button {
+  font-size: calc(1vmin + 13px);
+  border-radius: 5px;
+  padding: 1% 2%;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  animation: showElement 0.5s ease-out forwards;
+}
+.app-nav button.isActive {
+  color: #fff;
+}
+
+/* Link euromillions */
+.app-nav-euro {
+  color: #c49757;
+  border: 2px solid #c49757;
+  animation-delay: 0.2s;
+}
+.app-nav-euro.isActive {
+  background-color: #c49757;
+}
+/* Link loto */
+.app-nav-loto {
+  color: #56acd5;
+  border: 2px solid #56acd5;
+  animation-delay: 0.4s;
+}
+.app-nav-loto.isActive {
+  background-color: #56acd5;
+}
+/* Link keno */
+.app-nav-keno {
+  color: #e40521;
+  border: 2px solid #e40521;
+  animation-delay: 0.4s;
+}
+.app-nav-keno.isActive {
+  background-color: #e40521;
+}
+
+/* MAIN */
+.app-main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 2%;
+}
+
+/* THEME */
+section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  animation: showElement 0.3s ease-out 0.3s forwards;
+}
+/* All grids containers */
+.euro-grids-container,
+.loto-grids-container,
+.keno-grids-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 0.75;
+  font-size: calc(1vmin + 15px);
+  border-radius: 10px;
+  padding: 1% 0;
+}
+/* Buttons grid first */
+.grid-button.userNums {
+  background-color: #f1f1f1;
+  padding: calc(0.3vmin + 3px);
+}
+.grid-button.userNums.isActive {
+  border-radius: 3px;
+}
+/* Buttons grid second */
+.grid-button.userStars {
+  background-color: #f1f1f1;
+  border-radius: 7px;
+  padding: calc(0.3vmin + 4px);
+}
+/* Grid first */
+div.userNums {
+  display: grid;
+  gap: 0.4em;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 2% 2%;
+}
+/* Grid second */
+div.userStars {
+  display: grid;
+  gap: 0.3em;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 1.5% 1%;
+}
+
+/* Display results */
+.jackpot-results {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: calc(2vmin + 15px);
+  padding: 1%;
+}
+/* Container jackpot clicks */
+.jackpotClick {
+  display: flex;
+  justify-content: space-around;
+  padding: 2% 0;
+  border-radius: 5px;
+}
+.jackpotClick button {
+  color: #fff;
+  font-size: calc(1vmin + 12px);
+  border: none;
+  border-radius: 4px;
+  padding: 1.5% 5%;
+}
+
+/* EUROMILLIONS */
+.euro-grids-container {
+  background-color: #1f388d;
+}
+/* Grid first */
+.euro div.userNums {
+  grid-template-columns: repeat(5, auto);
+  border: 5px solid #c49757;
+}
+.euro .grid-button.userNums {
+  border: 2px solid #ff4040;
+  color: red;
+  padding: calc(0.3vmin + 3px);
+}
+.euro .grid-button.userNums.isActive {
+  background-color: #c49757;
+  border-color: #c49757;
+  color: #fff;
+}
+
+/* Grid second */
+.euro div.userStars {
+  grid-template-columns: repeat(12, auto);
+  border: 3px solid #c49757;
+}
+.euro .grid-button.userStars {
+  border: 2px solid #ff4040;
+  color: #ff4040;
+}
+.euro .grid-button.userStars.isActive {
+  background-color: #c49757;
+  border-color: #c49757;
+  color: #fff;
+}
+
+/* Display results */
+.euro .jackpot-results {
+  color: #1f388d;
+}
+.euro .userNumbers {
+  color: #c49757;
+}
+
+/* Container jackpot clicks */
+.euro .jackpotClick {
+  background-color: #1f388d;
+}
+/* Reset button clicks */
+.euro .jackpotClick button.reset {
+  background-color: #ff4040;
+}
+/* Jackpot button clicks */
+.euro .jackpotClick button.jackpot {
+  background-color: #c49757;
+}
+
+/* LOTO */
+.loto-grids-container {
+  background-color: #56acd5;
+}
+/* Grid first */
+.loto div.userNums {
+  grid-template-columns: repeat(5, auto);
+  border: 5px solid #e90c1d;
+}
+.loto .grid-button.userNums {
+  border: 2px solid #e90c1d;
+  color: #e90c1d;
+}
+.loto .grid-button.userNums.isActive {
+  background-color: #1f388d;
+  border-color: #1f388d;
+  color: #fff;
+}
+
+/* Grid second */
+.loto div.userStars {
+  grid-template-columns: repeat(10, auto);
+  border: 3px solid #e90c1d;
+}
+.loto .grid-button.userStars {
+  border: 2px solid #e90c1d;
+  color: #e90c1d;
+}
+.loto .grid-button.userStars.isActive {
+  background-color: #1f388d;
+  border-color: #1f388d;
+  color: #fff;
+}
+
+/* Display results */
+.loto .jackpot-results {
+  color: #56acd5;
+}
+.loto .userNumbers {
+  color: #1f388d;
+}
+
+/* Container jackpot clicks */
+.loto .jackpotClick {
+  background-color: #56acd5;
+}
+/* Reset button clicks */
+.loto .jackpotClick button.reset {
+  background-color: #ff4040;
+}
+/* Jackpot button clicks */
+.loto .jackpotClick button.jackpot {
+  background-color: #1f388d;
+}
+
+/* KENO */
+.keno-grids-container {
+  background-color: #faa426;
+}
+/* Grid first */
+.keno div.userNums {
+  grid-template-columns: repeat(7, auto);
+  border: 5px solid #e40521;
+}
+.keno .grid-button.userNums {
+  border: 2px solid #e40521;
+  color: #e40521;
+}
+.keno .grid-button.userNums.isActive {
+  background-color: #e40521;
+  border-color: #e40521;
+  color: #fff;
+}
+/* Select container */
+.inputKeno-container {
+  color: #fff;
+  font-size: calc(1.5vmin + 15px);
+}
+/* Select input */
+.inputKeno-container select {
+  font-size: calc(1vmin + 15px);
+  background-color: #faa426;
+  border: none;
+}
+
+/* Display results */
+.keno .jackpot-results {
+  color: #faa426;
+}
+.keno .result_stars {
+  display: none;
+}
+.keno .userNumbers {
+  color: #e40521;
+}
+
+/* Container jackpot clicks */
+.keno .jackpotClick {
+  background-color: #faa426;
+}
+/* Reset button clicks */
+.keno .jackpotClick button.reset {
+  background-color: #fe5f5f;
+}
+/* Jackpot button clicks */
+.keno .jackpotClick button.jackpot {
+  background-color: #e40521;
+}
+
+/* AUTHOR */
+.app-author {
+  color: #000;
+  font-size: calc(1.5vmin + 10px);
+  opacity: 0;
+  animation: showElement 0.5s ease-out 0.9s forwards;
+}
+
+.app-author-letter {
+  display: inline-block;
+  position: relative;
+  margin: 0 1px;
+  transition: all 0.3s ease-out;
+  animation: showAuthorLetters 0.5s ease-out;
+}
+
+/* Author letters animations delay */
+.app-author-letter:nth-child(1) {
+  animation-delay: 1.1s;
+}
+.app-author-letter:nth-child(2) {
+  animation-delay: 1.2s;
+}
+.app-author-letter:nth-child(3) {
+  margin: 0 3px;
+  animation-delay: 1.3s;
+}
+.app-author-letter:nth-child(4) {
+  animation-delay: 1.4s;
+}
+.app-author-letter:nth-child(5) {
+  animation-delay: 1.5s;
+}
+.app-author-letter:nth-child(6) {
+  animation-delay: 1.6s;
+}
+.app-author-letter:nth-child(7) {
+  animation-delay: 1.7s;
+}
+.app-author-letter:nth-child(8) {
+  animation-delay: 1.8s;
+}
+.app-author-letter:nth-child(9) {
+  animation-delay: 1.9s;
+}
+.app-author-letter:nth-child(10) {
+  margin: 0 3px;
+  animation-delay: 2s;
+}
+.app-author-letter:nth-child(11) {
+  animation-delay: 2.1s;
+}
+.app-author-letter:nth-child(12) {
+  animation-delay: 2.2s;
+}
+.app-author-letter:nth-child(13) {
+  animation-delay: 2.3s;
+}
+.app-author-letter:nth-child(14) {
+  animation-delay: 2.4s;
+}
+.app-author-letter:nth-child(15) {
+  animation-delay: 2.5s;
+}
+.app-author-letter:nth-child(16) {
+  animation-delay: 2.6s;
+}
+.app-author-letter:nth-child(17) {
+  animation-delay: 2.7s;
+}
+
+@media (min-width: 800px) {
+  .App {
+    padding: 1%;
+  }
+  /* TITLE */
+  .app-title {
+    padding: 1.5% 0%;
+  }
+  /* NAV */
+  .app-nav {
+    justify-content: space-around;
+    margin: 1% 0;
+  }
+  /* MAIN */
+  .app-main {
+    margin-bottom: 0.5%;
+  }
+  /* Euro & Loto grids containers */
+  .euro-grids-container,
+  .loto-grids-container {
+    flex-direction: row;
+  }
+  /* Grid first */
+  div.userNums {
+    padding: 1.5%;
+  }
+  /* Grid second */
+  div.userStars {
+    padding: 1%;
+  }
+  /* Grid first Euro */
+  .euro div.userNums {
+    grid-template-columns: repeat(10, auto);
+  }
+  /* Grid second Euro */
+  .euro div.userStars {
+    grid-template-columns: repeat(4, auto);
+  }
+  /* Grid first Loto */
+  .loto div.userNums {
+    grid-template-columns: repeat(7, auto);
+  }
+  /* Grid second Loto */
+  .loto div.userStars {
+    grid-template-columns: repeat(5, auto);
+  }
+  /* Grid first Keno */
+  .keno div.userNums {
+    grid-template-columns: repeat(14, auto);
+  }
+}
+
+/* RESPONSIVE 1250px */
+@media (min-width: 1250px) {
+  /* All buttons */
+  button {
+    cursor: pointer;
+  }
+  /* Nav & Jackpot buttons hover */
+  .app-nav button:hover,
+  .jackpotClick button:hover {
+    filter: contrast(180%);
+  }
+  .grid-button {
+    font-size: calc(1.5vmin + 10px);
+  }
+}
+
+/* Animations */
+@keyframes showElement {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Display Author  */
+@keyframes showAuthorLetters {
+  from {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  to {
+    transform: scale(1);
+  }
 }
